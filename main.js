@@ -1,34 +1,45 @@
-var m = prompt("укажите свою массу тела");
-var h = prompt("укажите свой рост");
+document.addEventListener("DOMContentLoaded", init);
 
-var imt = parseFloat(m) /(parseFloat(h) *parseFloat(h));
-//alert (imt);
-console.log(imt);
-switch (true) {
-    case (imt <= 16):
-        alert("дефецит");
-        break;
-    case ((imt > 16) && (imt<=18.5)):
-        alert("недостаточный");
-        break;
-    case ((imt > 18.5) && (imt<=25)):
-        alert("нормальный");
-        break;
-    case ((imt > 25) && (imt<=30)):
-        alert("избыточный");
-        break;
-    case ((imt > 30) && (imt<=35)):
-        alert("ожирение 1й");
-        break;
-    case ((imt > 35) && (imt<=40)):
-        alert("ожирение 2й");
-        break;
-    case (imt > 40):
-        alert("ожирение 3й");
-        break;
+function init(){
+  
+    let btn = document.querySelector(".calculate");
+    btn.addEventListener('click', function(e) {
+        let w = document.querySelector(".weight").value;
+        let h = document.querySelector(".height").value;
+       
+        let imt = parseFloat(w) /(parseFloat(h) *parseFloat(h));
+       
+        var   result;  
+        if (imt <= 16){
+            result = "дефецит ("+imt+")";
+        }
+        else
+        if    (imt<=18.5) {
+            result = "недостаточный ("+imt+")";    
+        }
+        else
+            if(imt<=25){
+                result = "нормальный("+imt+")";
+            }
+        else
+        if (imt<=30){
+            result = "избыточный("+imt+")";
+        }
+        else 
+        if (imt<=35){
+            result = "ожирение 1й("+imt+")";
+        }else
+        if  (imt<=40){
+            result = "ожирение 2й("+imt+")";
+        }
+        else {
+            result = "ожирение 3й("+imt+")";
+        }
+        let answer = document.querySelector(".result");
+        answer.value = result;
+        answer.textContent=result;
+
+    });
     
 
-    default:
-    alert("you do something wrong");
-        break;
 }
