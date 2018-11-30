@@ -10,21 +10,17 @@ body{
     margin: 0 auto;
     width: 400px;
 }
-p{
-    margin-left: 20px;
-}
 input{
     height: 20px;
-    margin-left: 20px;
+  
 }
 .calculate{
     display: inline-block;
-    margin: 20px;
-    width: 200px;
+    margin: 20px 0;
+    width: 172px;
     height: 25px;
     background-color: coral;
-    border: brown 2px solid;
-    
+    border: brown 2px solid;    
 }
 .result{
     font-weight: bold;
